@@ -3,6 +3,8 @@
 
 def shared_pods
     pod 'IDIAZM', :git => 'https://github.com/ivandiazmolina/IDIAZM-library', :branch => 'develop'
+    pod 'NVActivityIndicatorView/Extended'
+    pod 'SDWebImage'
 end
 
 target 'JSONMarvelapp' do
