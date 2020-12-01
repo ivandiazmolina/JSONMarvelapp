@@ -13,9 +13,24 @@
 import UIKit
 
 protocol MainPresentationLogic {
+    func setupView()
+    func presentSeries(response: Main.loadInitialData.Response)
 }
 
 class MainPresenter: MainPresentationLogic {
     
     weak var viewController: MainDisplayLogic?
+    
+    func setupView() {
+        viewController?.setupView()
+    }
+    
+    func presentSeries(response: Main.loadInitialData.Response) {
+        
+        // 1. save data in Manager
+        SeriesManager.shared.setSeries(response.series ?? [])
+        
+        // 2. display data
+        viewController?.displaySeries()
+    }
 }

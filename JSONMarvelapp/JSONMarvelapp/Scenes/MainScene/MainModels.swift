@@ -19,6 +19,7 @@ enum Main {
         struct Request {
         }
         struct Response {
+            var series: [Serie]?
         }
         struct ViewModel {
         }

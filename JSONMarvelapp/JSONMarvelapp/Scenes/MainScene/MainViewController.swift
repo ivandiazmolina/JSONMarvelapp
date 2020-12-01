@@ -13,6 +13,8 @@
 import UIKit
 
 protocol MainDisplayLogic: class {
+    func setupView()
+    func displaySeries()
 }
 
 class MainViewController: BaseViewController, MainDisplayLogic {
@@ -62,5 +64,15 @@ class MainViewController: BaseViewController, MainDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        interactor?.setupView()
+    }
+    
+    func setupView() {
+        print(#function)
+    }
+    
+    func displaySeries() {
+        print(#function)
     }
 }

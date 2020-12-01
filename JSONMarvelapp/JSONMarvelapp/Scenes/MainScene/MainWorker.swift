@@ -13,4 +13,28 @@
 import UIKit
 
 class MainWorker {
+    
+    func getInitialData(completion: @escaping([Serie]?, String?) -> Void) {
+        
+        // LETS and VARS
+        var mSeries: [Serie]?
+        
+        let dispatchGroup = DispatchGroup()
+        
+        let serieRepository = SerieRepository()
+        
+        
+        // Get Series
+        dispatchGroup.enter()
+        serieRepository.getSeries() { series in
+            print(series)
+            mSeries = series
+            dispatchGroup.leave()
+        }
+        
+        // DispatchGroup
+        dispatchGroup.notify(queue: .main) {
+            completion(mSeries, nil)
+        }
+    }
 }

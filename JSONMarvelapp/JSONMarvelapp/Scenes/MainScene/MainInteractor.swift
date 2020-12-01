@@ -13,6 +13,8 @@
 import UIKit
 
 protocol MainBusinessLogic {
+    func setupView()
+    func getInitialData()
 }
 
 protocol MainDataStore {
@@ -22,4 +24,28 @@ class MainInteractor: MainBusinessLogic, MainDataStore {
     
     var presenter: MainPresentationLogic?
     var worker: MainWorker?
+    
+    func setupView() {
+        worker = MainWorker()
+        presenter?.setupView()
+        getInitialData()
+    }
+    
+    func getInitialData() {
+        
+        worker?.getInitialData(completion: { [weak self] (series, error) in
+            
+            guard error != nil else {
+                
+                // SUCCESS
+                let response = Main.loadInitialData.Response(series: series)
+                
+                self?.presenter?.presentSeries(response: response)
+                return
+            }
+            
+            // FAILURE
+            self?.presenter?.presentSeries(response: Main.loadInitialData.Response())
+        })
+    }
 }
