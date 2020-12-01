@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		0CEAD4170E5E3A18A327F052 /* Pods-JSONMarvelappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONMarvelappTests.debug.xcconfig"; path = "Target Support Files/Pods-JSONMarvelappTests/Pods-JSONMarvelappTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2CA8061E25769192000571E5 /* JSONMarvelapp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JSONMarvelapp-Bridging-Header.h"; sourceTree = "<group>"; };
 		2CDC930825768DBD0046943A /* JSONMarvelapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSONMarvelapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CDC930B25768DBD0046943A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CDC930D25768DBD0046943A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +99,7 @@
 				2CDC931425768DBE0046943A /* Assets.xcassets */,
 				2CDC931625768DBE0046943A /* LaunchScreen.storyboard */,
 				2CDC931925768DBE0046943A /* Info.plist */,
+				2CA8061E25769192000571E5 /* JSONMarvelapp-Bridging-Header.h */,
 			);
 			path = JSONMarvelapp;
 			sourceTree = "<group>";
@@ -142,6 +144,7 @@
 				2CDC930425768DBD0046943A /* Sources */,
 				2CDC930525768DBD0046943A /* Frameworks */,
 				2CDC930625768DBD0046943A /* Resources */,
+				EE57E6C382060EB935EBD459 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,6 +163,7 @@
 				2CDC931A25768DBE0046943A /* Sources */,
 				2CDC931B25768DBE0046943A /* Frameworks */,
 				2CDC931C25768DBE0046943A /* Resources */,
+				9F3813B35383D60904FB0EDE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -230,6 +234,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		9F3813B35383D60904FB0EDE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JSONMarvelappTests/Pods-JSONMarvelappTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JSONMarvelappTests/Pods-JSONMarvelappTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JSONMarvelappTests/Pods-JSONMarvelappTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AAFE333269AFF5444B8F0673 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -272,6 +293,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE57E6C382060EB935EBD459 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JSONMarvelapp/Pods-JSONMarvelapp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JSONMarvelapp/Pods-JSONMarvelapp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JSONMarvelapp/Pods-JSONMarvelapp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -453,6 +491,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = IDIAZM.JSONMarvelapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$SRCROOT/$PROJECT_NAME/JSONMarvelapp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -472,6 +511,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = IDIAZM.JSONMarvelapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$SRCROOT/$PROJECT_NAME/JSONMarvelapp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

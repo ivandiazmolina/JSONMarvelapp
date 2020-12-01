@@ -1,15 +1,21 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
+def shared_pods
+    pod 'IDIAZM', :git => 'https://github.com/ivandiazmolina/IDIAZM-library', :branch => 'develop'
+end
+
 target 'JSONMarvelapp' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for JSONMarvelapp
+  shared_pods
 
   target 'JSONMarvelappTests' do
     inherit! :search_paths
     # Pods for testing
+    shared_pods
   end
 
 end
