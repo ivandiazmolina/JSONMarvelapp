@@ -1,30 +1,25 @@
 //
-//  Serie.swift
+//  Thumbnail.swift
 //  JSONMarvelapp
 //
-//  Created by Iván Díaz Molina on 1/12/20.
+//  Created by Iván Díaz Molina on 2/12/20.
 //  Copyright © 2020 IDIAZM. All rights reserved.
 //
 
 import Foundation
 
-struct Serie: Codable {
+struct Thumbail: Codable {
     
-    var id: Int?
-    var title: String?
-    var thumbnail: Thumbail?
-    var image: String {
-        return "\(thumbnail?.path ?? "").\(thumbnail?.extension ?? "")"
-    }
+    var path: String?
+    var `extension`: String?
     
     init() {
-        id = -1
-        title = ""
-        thumbnail = Thumbail()
+        path = ""
+        `extension` = ""
     }
     
     init(_ data: Data) throws {
-        self = try JSONDecoder().decode(Serie.self, from: data)
+        self = try JSONDecoder().decode(Thumbail.self, from: data)
     }
     
     init(_ json: String, encoding: String.Encoding = .utf8) throws {

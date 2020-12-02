@@ -36,9 +36,6 @@ class SeriesInteractor: SeriesBusinessLogic, SeriesDataStore {
     var selectedSerie: Serie?
     
     func setupView() {
-//        worker = ExploreWorker()
-//        let response: Explore.Models.Response = Explore.Models.Response()
-//        presenter?.setupView(response: response)
         presenter?.setupView()
     }
     
