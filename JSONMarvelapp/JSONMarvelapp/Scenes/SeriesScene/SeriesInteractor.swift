@@ -44,6 +44,8 @@ class SeriesInteractor: SeriesBusinessLogic, SeriesDataStore {
         guard let serie = series?.getElement(index) else { return }
         
         selectedSerie = serie
+        
+        presenter?.presentCharacters()
     }
     
     // MARK: Series

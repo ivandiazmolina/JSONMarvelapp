@@ -45,4 +45,10 @@ class BaseViewController: UIViewController, NVActivityIndicatorViewable {
         }
     }
 
+    /// reload data of CollectionView
+    func reloadData(collectionView: UICollectionView) {
+        ui {
+            collectionView.reloadData()
+        }
+    }
 }

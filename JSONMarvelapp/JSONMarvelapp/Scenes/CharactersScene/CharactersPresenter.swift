@@ -1,5 +1,5 @@
 //
-//  SeriesPresenter.swift
+//  CharactersPresenter.swift
 //  JSONMarvelapp
 //
 //  Created by Iván Díaz Molina on 2/12/20.
@@ -12,19 +12,19 @@
 
 import UIKit
 
-protocol SeriesPresentationLogic {
+protocol CharactersPresentationLogic {
     func setupView()
     func presentCharacters()
 }
 
-class SeriesPresenter: SeriesPresentationLogic {
+class CharactersPresenter: CharactersPresentationLogic {
     
-    weak var viewController: SeriesDisplayLogic?
+    weak var viewController: CharactersDisplayLogic?
     
     func setupView() {
         
         // 1. create viewModel
-        let viewModel = Series.SetupView.ViewModel(title: "series.title".localized)
+        let viewModel = Characters.SetupView.ViewModel(title: "characters.title".localized)
         
         // 2. display data
         viewController?.setupView(viewModel: viewModel)

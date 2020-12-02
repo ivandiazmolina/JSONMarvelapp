@@ -14,6 +14,7 @@ import UIKit
 
 protocol SeriesDisplayLogic: class {
     func setupView(viewModel: Series.SetupView.ViewModel)
+    func displayCharacters()
 }
 
 class SeriesViewController: BaseViewController, SeriesDisplayLogic {
@@ -21,6 +22,7 @@ class SeriesViewController: BaseViewController, SeriesDisplayLogic {
     var interactor: SeriesBusinessLogic?
     var router: (NSObjectProtocol & SeriesRoutingLogic & SeriesDataPassing)?
     
+    // MARK: IBOutlets
     @IBOutlet weak var seriesTableView: IntrinsicHeightTableView!
     
     // MARK: Object lifecycle
@@ -83,6 +85,10 @@ class SeriesViewController: BaseViewController, SeriesDisplayLogic {
         seriesTableView.delegate = self
         seriesTableView.dataSource = self
     }
+    
+    func displayCharacters() {
+        router?.routerToCharacters(segue: nil)
+    }
 }
 
 // MARK: UITableviewDelegate and UITableViewDataSource
@@ -112,6 +118,8 @@ extension SeriesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        interactor?.didSelectedItemAt(index: indexPath.row)
     }
 }
 

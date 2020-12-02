@@ -18,11 +18,8 @@ class MainWorker {
         
         // LETS and VARS
         var mSeries: [Serie]?
-        
-        let dispatchGroup = DispatchGroup()
-        
         let serieRepository = SerieRepository()
-        
+        let dispatchGroup = DispatchGroup()
         
         // Get Series
         dispatchGroup.enter()

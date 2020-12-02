@@ -13,6 +13,7 @@
 import UIKit
 
 @objc protocol SeriesRoutingLogic {
+    func routerToCharacters(segue: UIStoryboardSegue?)
 }
 
 protocol SeriesDataPassing {
@@ -23,4 +24,31 @@ class SeriesRouter: NSObject, SeriesRoutingLogic, SeriesDataPassing {
     
     weak var viewController: SeriesViewController?
     var dataStore: SeriesDataStore?
+    
+    func routerToCharacters(segue: UIStoryboardSegue?) {
+        let storyboard = UIStoryboard(name: Constants.Storyboard.characters, bundle: nil)
+        
+        if let segue = segue, let destinationVC = segue.destination as? CharactersViewController {
+            var destinationDS = destinationVC.router?.dataStore
+            passDataToCharacters(source: dataStore, destination: &destinationDS)
+        } else if let destinationVC = storyboard.instantiateInitialViewController() as? CharactersViewController {
+            var destinationDS = destinationVC.router?.dataStore
+            passDataToCharacters(source: dataStore, destination: &destinationDS)
+            navigateToComments(source: viewController!, destination: destinationVC)
+        }
+    }
+    
+    // MARK: Navigation
+    
+    func navigateToComments(source: SeriesViewController, destination: CharactersViewController) {
+        ui {
+            source.navigationController?.pushViewController(destination, animated: true)
+        }
+    }
+    
+    // MARK: Passing data
+    
+    func passDataToCharacters(source: SeriesDataStore?, destination: inout CharactersDataStore?) {
+        destination?.serie = source?.selectedSerie
+    }
 }

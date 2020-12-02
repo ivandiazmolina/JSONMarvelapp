@@ -17,12 +17,20 @@ enum APIRequestResult<U> {
     case failure(error: String)
 }
 
-// Enum to know operation result.
-//
-// - success: Operation finish without error
-// - failure: Operation finish with error
-enum APIEndpoint: String {
-    case series = "/series"
+
+enum APIEndpoint {
+    case series
+    case characters(serieID: Int)
+    
+    
+    var url: String {
+        switch self {
+        case .series:
+            return "/series"
+        case .characters(let serieID):
+            return "/series/\(serieID)/characters"
+        }
+    }
 }
 
 class APIBaseRepository {
@@ -38,6 +46,6 @@ class APIBaseRepository {
     /// - Parameter endPoint: endpoint
     /// - Returns: URL object with the Endpoint from API
     static func createURL(endPoint: APIEndpoint) -> URL? {
-        return URL(string: BASE_URL + endPoint.rawValue + FINAL_URL)
+        return URL(string: BASE_URL + endPoint.url + FINAL_URL)
     }
 }
