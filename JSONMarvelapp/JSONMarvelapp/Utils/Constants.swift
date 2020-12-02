@@ -9,11 +9,12 @@
 struct Constants {
     
     struct Storyboard {
-        static let main: String = "MainStoryboard"
+        static let main: String = "Main"
+        static let series: String = "Series"
     }
     
     struct Scene {
-        static let scene: String = "MainViewController"
+        static let main: String = "MainViewController"
+        static let series: String = "SeriesViewController"
     }
-    
 }

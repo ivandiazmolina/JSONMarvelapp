@@ -37,5 +37,12 @@ class BaseViewController: UIViewController, NVActivityIndicatorViewable {
             self?.stopAnimating(.none)
         }
     }
+    
+    /// reload data of TableView
+    func reloadData(tableView: UITableView) {
+        ui {
+            tableView.reloadData()
+        }
+    }
 
 }

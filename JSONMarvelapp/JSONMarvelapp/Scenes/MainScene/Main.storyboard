@@ -21,40 +21,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YsI-pP-eb0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-296" y="301"/>
+            <point key="canvasLocation" x="119" y="398"/>
         </scene>
-        <!--Item 1-->
-        <scene sceneID="WGD-Nz-gRk">
-            <objects>
-                <viewController id="4fG-9n-8xi" customClass="MainViewController" customModule="JSONMarvelapp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uuk-Bg-k9A">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="h6C-Ic-hyV"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="PgP-33-gF4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1bm-mk-OqB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1255" y="301"/>
-        </scene>
-        <!--Tab Bar Controller-->
+        <!--Main View Controller-->
         <scene sceneID="ZgX-ta-Oqu">
             <objects>
-                <tabBarController id="Itp-mU-MZV" sceneMemberID="viewController">
+                <tabBarController id="Itp-mU-MZV" customClass="MainViewController" customModule="JSONMarvelapp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mmj-Kc-V6A">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="4fG-9n-8xi" kind="relationship" relationship="viewControllers" id="ZKP-J5-KB9"/>
+                        <segue destination="jkB-oH-bbi" kind="relationship" relationship="viewControllers" id="Q8b-5g-wEH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sfm-xK-MUs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-749" y="-416"/>
+        </scene>
+        <!--Series-->
+        <scene sceneID="4bM-I4-tpn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Series" id="jkB-oH-bbi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="pSv-c6-IQj"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KkW-n7-qBo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1115" y="96"/>
         </scene>
     </scenes>
 </document>

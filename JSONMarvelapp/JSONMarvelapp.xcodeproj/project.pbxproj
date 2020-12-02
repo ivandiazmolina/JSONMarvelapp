@@ -7,7 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C5EF1C62576A16400DC5870 /* Threads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5EF1C52576A16400DC5870 /* Threads.swift */; };
+		2C1208B825777E9E00CB652F /* SeriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1208B225777E9E00CB652F /* SeriesPresenter.swift */; };
+		2C1208B925777E9E00CB652F /* SeriesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1208B325777E9E00CB652F /* SeriesWorker.swift */; };
+		2C1208BA25777E9E00CB652F /* SeriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1208B425777E9E00CB652F /* SeriesRouter.swift */; };
+		2C1208BB25777E9E00CB652F /* SeriesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1208B525777E9E00CB652F /* SeriesModels.swift */; };
+		2C1208BC25777E9E00CB652F /* SeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1208B625777E9E00CB652F /* SeriesViewController.swift */; };
+		2C1208BD25777E9E00CB652F /* SeriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1208B725777E9E00CB652F /* SeriesInteractor.swift */; };
+		2C1208BF25777F2200CB652F /* Series.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1208BE25777F2200CB652F /* Series.storyboard */; };
+		2C1208C4257785C400CB652F /* SerieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1208C2257785C400CB652F /* SerieTableViewCell.swift */; };
+		2C1208C5257785C400CB652F /* SerieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1208C3257785C400CB652F /* SerieTableViewCell.xib */; };
+		2C1208C72577B98E00CB652F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C1208C62577B98E00CB652F /* Localizable.strings */; };
 		2C5EF1C82576A5AB00DC5870 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5EF1C72576A5AB00DC5870 /* Constants.swift */; };
 		2C5EF1CA2576E86100DC5870 /* APIBaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5EF1C92576E86100DC5870 /* APIBaseRepository.swift */; };
 		2C5EF1D02576EB7600DC5870 /* SerieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5EF1CF2576EB7600DC5870 /* SerieRepository.swift */; };
@@ -46,7 +55,16 @@
 
 /* Begin PBXFileReference section */
 		0CEAD4170E5E3A18A327F052 /* Pods-JSONMarvelappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONMarvelappTests.debug.xcconfig"; path = "Target Support Files/Pods-JSONMarvelappTests/Pods-JSONMarvelappTests.debug.xcconfig"; sourceTree = "<group>"; };
-		2C5EF1C52576A16400DC5870 /* Threads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Threads.swift; sourceTree = "<group>"; };
+		2C1208B225777E9E00CB652F /* SeriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesPresenter.swift; sourceTree = "<group>"; };
+		2C1208B325777E9E00CB652F /* SeriesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesWorker.swift; sourceTree = "<group>"; };
+		2C1208B425777E9E00CB652F /* SeriesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesRouter.swift; sourceTree = "<group>"; };
+		2C1208B525777E9E00CB652F /* SeriesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesModels.swift; sourceTree = "<group>"; };
+		2C1208B625777E9E00CB652F /* SeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesViewController.swift; sourceTree = "<group>"; };
+		2C1208B725777E9E00CB652F /* SeriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesInteractor.swift; sourceTree = "<group>"; };
+		2C1208BE25777F2200CB652F /* Series.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Series.storyboard; sourceTree = "<group>"; };
+		2C1208C2257785C400CB652F /* SerieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieTableViewCell.swift; sourceTree = "<group>"; };
+		2C1208C3257785C400CB652F /* SerieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SerieTableViewCell.xib; sourceTree = "<group>"; };
+		2C1208C62577B98E00CB652F /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2C5EF1C72576A5AB00DC5870 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2C5EF1C92576E86100DC5870 /* APIBaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBaseRepository.swift; sourceTree = "<group>"; };
 		2C5EF1CF2576EB7600DC5870 /* SerieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieRepository.swift; sourceTree = "<group>"; };
@@ -101,10 +119,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C1208B125777E8400CB652F /* SeriesScene */ = {
+			isa = PBXGroup;
+			children = (
+				2C1208C02577854900CB652F /* View */,
+				2C1208B225777E9E00CB652F /* SeriesPresenter.swift */,
+				2C1208B325777E9E00CB652F /* SeriesWorker.swift */,
+				2C1208B425777E9E00CB652F /* SeriesRouter.swift */,
+				2C1208B525777E9E00CB652F /* SeriesModels.swift */,
+				2C1208B625777E9E00CB652F /* SeriesViewController.swift */,
+				2C1208B725777E9E00CB652F /* SeriesInteractor.swift */,
+				2C1208BE25777F2200CB652F /* Series.storyboard */,
+			);
+			path = SeriesScene;
+			sourceTree = "<group>";
+		};
+		2C1208C02577854900CB652F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2C1208C2257785C400CB652F /* SerieTableViewCell.swift */,
+				2C1208C3257785C400CB652F /* SerieTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2C5EF1C42576A14B00DC5870 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				2C5EF1C52576A16400DC5870 /* Threads.swift */,
 				2C5EF1C72576A5AB00DC5870 /* Constants.swift */,
 			);
 			path = Utils;
@@ -135,6 +176,7 @@
 			children = (
 				2CA806242576936B000571E5 /* BaseViewController.swift */,
 				2CA8062625769762000571E5 /* MainScene */,
+				2C1208B125777E8400CB652F /* SeriesScene */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -167,6 +209,7 @@
 		2CA8062325769306000571E5 /* i18n */ = {
 			isa = PBXGroup;
 			children = (
+				2C1208C62577B98E00CB652F /* Localizable.strings */,
 			);
 			path = i18n;
 			sourceTree = "<group>";
@@ -339,8 +382,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CDC931825768DBE0046943A /* LaunchScreen.storyboard in Resources */,
+				2C1208C72577B98E00CB652F /* Localizable.strings in Resources */,
+				2C1208C5257785C400CB652F /* SerieTableViewCell.xib in Resources */,
 				2CDC931525768DBE0046943A /* Assets.xcassets in Resources */,
 				2CA8063425769997000571E5 /* Main.storyboard in Resources */,
+				2C1208BF25777F2200CB652F /* Series.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,19 +490,25 @@
 				2CA8062D25769963000571E5 /* MainPresenter.swift in Sources */,
 				2C5EF1DB2576F56500DC5870 /* DataResponse.swift in Sources */,
 				2C5EF1C82576A5AB00DC5870 /* Constants.swift in Sources */,
+				2C1208BA25777E9E00CB652F /* SeriesRouter.swift in Sources */,
 				2C5EF1D62576EC7C00DC5870 /* SeriesManager.swift in Sources */,
 				2CA8062F25769963000571E5 /* MainRouter.swift in Sources */,
+				2C1208B825777E9E00CB652F /* SeriesPresenter.swift in Sources */,
 				2CA8063225769963000571E5 /* MainInteractor.swift in Sources */,
 				2CA806252576936B000571E5 /* BaseViewController.swift in Sources */,
 				2CA8063025769963000571E5 /* MainModels.swift in Sources */,
+				2C1208BB25777E9E00CB652F /* SeriesModels.swift in Sources */,
 				2C5EF1D42576EBE300DC5870 /* APISerieRepository.swift in Sources */,
 				2CDC930C25768DBD0046943A /* AppDelegate.swift in Sources */,
+				2C1208BC25777E9E00CB652F /* SeriesViewController.swift in Sources */,
 				2CA8063125769963000571E5 /* MainViewController.swift in Sources */,
-				2C5EF1C62576A16400DC5870 /* Threads.swift in Sources */,
 				2C5EF1DD2576F7F600DC5870 /* DataModel.swift in Sources */,
+				2C1208B925777E9E00CB652F /* SeriesWorker.swift in Sources */,
 				2CA8062E25769963000571E5 /* MainWorker.swift in Sources */,
 				2CDC930E25768DBD0046943A /* SceneDelegate.swift in Sources */,
 				2C5EF1CA2576E86100DC5870 /* APIBaseRepository.swift in Sources */,
+				2C1208C4257785C400CB652F /* SerieTableViewCell.swift in Sources */,
+				2C1208BD25777E9E00CB652F /* SeriesInteractor.swift in Sources */,
 				2C5EF1D92576ECBF00DC5870 /* Serie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

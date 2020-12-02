@@ -12,15 +12,20 @@
 
 import UIKit
 
-protocol MainDisplayLogic: class {
-    func setupView()
-    func displaySeries()
+protocol MainDelegate: class {
+    func fetchedSeries(series: [Serie])
 }
 
-class MainViewController: BaseViewController, MainDisplayLogic {
+protocol MainDisplayLogic: class {
+    func setupView()
+    func displaySeries(viewModel: Main.loadInitialData.ViewModel)
+}
+
+class MainViewController: UITabBarController, MainDisplayLogic {
     
     var interactor: MainBusinessLogic?
     var router: (NSObjectProtocol & MainRoutingLogic & MainDataPassing)?
+    weak var mainDelegate: MainDelegate?
     
     // MARK: Object lifecycle
     
@@ -72,7 +77,18 @@ class MainViewController: BaseViewController, MainDisplayLogic {
         print(#function)
     }
     
-    func displaySeries() {
+    func displaySeries(viewModel: Main.loadInitialData.ViewModel) {
         print(#function)
+        
+        let seriesVC = viewControllers?.getElement(0)?.children.getElement(0) as? SeriesViewController
+        
+        seriesVC?.interactor?.setSeries(viewModel.series ?? [])
+        
+        guard let delegate = mainDelegate else {
+            print("mainDelegate is not initialized")
+            return
+        }
+        
+        delegate.fetchedSeries(series: viewModel.series ?? [])
     }
 }

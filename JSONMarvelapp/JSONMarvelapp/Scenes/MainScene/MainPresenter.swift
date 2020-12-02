@@ -30,7 +30,10 @@ class MainPresenter: MainPresentationLogic {
         // 1. save data in Manager
         SeriesManager.shared.setSeries(response.series ?? [])
         
-        // 2. display data
-        viewController?.displaySeries()
+        // 2. create viewModel
+        let viewModel = Main.loadInitialData.ViewModel(series: response.series)
+        
+        // 3. display data
+        viewController?.displaySeries(viewModel: viewModel)
     }
 }
