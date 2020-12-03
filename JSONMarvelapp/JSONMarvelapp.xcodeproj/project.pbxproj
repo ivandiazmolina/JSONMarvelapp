@@ -41,6 +41,8 @@
 		2C5E5F1E2578F3DE0067CC13 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E5F182578F3DE0067CC13 /* DetailsViewController.swift */; };
 		2C5E5F1F2578F3DE0067CC13 /* DetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E5F192578F3DE0067CC13 /* DetailsInteractor.swift */; };
 		2C5E5F212578F9F40067CC13 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C5E5F202578F9F40067CC13 /* Details.storyboard */; };
+		2C5E5F24257908610067CC13 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E5F23257908610067CC13 /* EmptyView.swift */; };
+		2C5E5F26257909040067CC13 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C5E5F25257909040067CC13 /* EmptyView.xib */; };
 		2C5EF1C82576A5AB00DC5870 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5EF1C72576A5AB00DC5870 /* Constants.swift */; };
 		2C5EF1CA2576E86100DC5870 /* APIBaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5EF1C92576E86100DC5870 /* APIBaseRepository.swift */; };
 		2C5EF1D02576EB7600DC5870 /* SerieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5EF1CF2576EB7600DC5870 /* SerieRepository.swift */; };
@@ -113,6 +115,8 @@
 		2C5E5F182578F3DE0067CC13 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		2C5E5F192578F3DE0067CC13 /* DetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInteractor.swift; sourceTree = "<group>"; };
 		2C5E5F202578F9F40067CC13 /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
+		2C5E5F23257908610067CC13 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		2C5E5F25257909040067CC13 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		2C5EF1C72576A5AB00DC5870 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2C5EF1C92576E86100DC5870 /* APIBaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBaseRepository.swift; sourceTree = "<group>"; };
 		2C5EF1CF2576EB7600DC5870 /* SerieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieRepository.swift; sourceTree = "<group>"; };
@@ -257,6 +261,15 @@
 			path = DetailsScene;
 			sourceTree = "<group>";
 		};
+		2C5E5F22257906A50067CC13 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C5E5F23257908610067CC13 /* EmptyView.swift */,
+				2C5E5F25257909040067CC13 /* EmptyView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2C5EF1C42576A14B00DC5870 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,6 +383,7 @@
 		2CDC930A25768DBD0046943A /* JSONMarvelapp */ = {
 			isa = PBXGroup;
 			children = (
+				2C5E5F22257906A50067CC13 /* Views */,
 				2CA8061F257692D8000571E5 /* Scenes */,
 				2CA80620257692E5000571E5 /* Networking */,
 				2CA80622257692F9000571E5 /* Repositories */,
@@ -505,6 +519,7 @@
 				2C1208C72577B98E00CB652F /* Localizable.strings in Resources */,
 				2C1208E02577E1A500CB652F /* Characters.storyboard in Resources */,
 				2C1208C5257785C400CB652F /* SerieTableViewCell.xib in Resources */,
+				2C5E5F26257909040067CC13 /* EmptyView.xib in Resources */,
 				2C1208E72577F67D00CB652F /* CharacterCollectionViewCell.xib in Resources */,
 				2CDC931525768DBE0046943A /* Assets.xcassets in Resources */,
 				2CA8063425769997000571E5 /* Main.storyboard in Resources */,
@@ -624,6 +639,7 @@
 				2CA8062F25769963000571E5 /* MainRouter.swift in Sources */,
 				2C1208B825777E9E00CB652F /* SeriesPresenter.swift in Sources */,
 				2CA8063225769963000571E5 /* MainInteractor.swift in Sources */,
+				2C5E5F24257908610067CC13 /* EmptyView.swift in Sources */,
 				2C1208E62577F67D00CB652F /* CharacterCollectionViewCell.swift in Sources */,
 				2CA806252576936B000571E5 /* BaseViewController.swift in Sources */,
 				2C5E5F1D2578F3DE0067CC13 /* DetailsModels.swift in Sources */,
