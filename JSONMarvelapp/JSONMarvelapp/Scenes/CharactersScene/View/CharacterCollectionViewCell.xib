@@ -19,17 +19,48 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hwv-32-KiP">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="leL-yc-EmO" userLabel="container text">
+                        <rect key="frame" x="0.0" y="210" width="240" height="30"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6a0-D9-B03">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niz-hb-tUp">
+                                <rect key="frame" x="16" y="0.0" width="208" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6a0-D9-B03" firstAttribute="leading" secondItem="leL-yc-EmO" secondAttribute="leading" id="57g-pn-lEc"/>
+                            <constraint firstItem="niz-hb-tUp" firstAttribute="leading" secondItem="leL-yc-EmO" secondAttribute="leading" constant="16" id="9yx-NM-Of5"/>
+                            <constraint firstAttribute="trailing" secondItem="niz-hb-tUp" secondAttribute="trailing" constant="16" id="EWu-c6-lPJ"/>
+                            <constraint firstItem="6a0-D9-B03" firstAttribute="top" secondItem="leL-yc-EmO" secondAttribute="top" id="Kj9-Ev-ZNK"/>
+                            <constraint firstAttribute="bottom" secondItem="niz-hb-tUp" secondAttribute="bottom" id="Kth-J5-8aL"/>
+                            <constraint firstItem="6a0-D9-B03" firstAttribute="height" secondItem="leL-yc-EmO" secondAttribute="height" id="LZ9-s3-9hg"/>
+                            <constraint firstAttribute="height" constant="30" id="ONj-Gm-q9x"/>
+                            <constraint firstItem="6a0-D9-B03" firstAttribute="width" secondItem="leL-yc-EmO" secondAttribute="width" id="sds-VK-ia3"/>
+                            <constraint firstItem="niz-hb-tUp" firstAttribute="top" secondItem="leL-yc-EmO" secondAttribute="top" id="zmO-ze-Otu"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="Hwv-32-KiP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="9eN-On-8S9"/>
                 <constraint firstItem="Hwv-32-KiP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="FJu-U8-ABf"/>
+                <constraint firstAttribute="bottom" secondItem="leL-yc-EmO" secondAttribute="bottom" id="L1X-L9-FTc"/>
+                <constraint firstAttribute="trailing" secondItem="leL-yc-EmO" secondAttribute="trailing" id="NsE-kH-DXt"/>
                 <constraint firstAttribute="bottom" secondItem="Hwv-32-KiP" secondAttribute="bottom" id="Ql9-kH-Swy"/>
                 <constraint firstAttribute="trailing" secondItem="Hwv-32-KiP" secondAttribute="trailing" id="bD5-As-3Ju"/>
+                <constraint firstItem="leL-yc-EmO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mhe-4j-erd"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="characterImageView" destination="Hwv-32-KiP" id="Dbu-dA-Pak"/>
+                <outlet property="characterNameLabel" destination="niz-hb-tUp" id="rFU-LV-pF7"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="122.54464285714285"/>
         </collectionViewCell>

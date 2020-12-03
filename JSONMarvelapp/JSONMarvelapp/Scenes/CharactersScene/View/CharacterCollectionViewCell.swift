@@ -11,6 +11,7 @@ import SDWebImage
 
 class CharacterCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var characterNameLabel: UILabel!
     @IBOutlet weak var characterImageView: UIImageView!
     
     static var cellIdentifier: String {
@@ -19,7 +20,14 @@ class CharacterCollectionViewCell: UICollectionViewCell {
     
     func updateUI(model: Characters.Models.CharacterCellModel) {
         
-        guard let url = URL(string: model.character?.image ?? "") else { return }
+        guard let character = model.character else { return }
+        
+        // Label
+        characterNameLabel.text = character.name
+        characterNameLabel.textColor = .white
+        characterNameLabel.font = .boldSystemFont(ofSize: 12)
+        
+        guard let url = URL(string: character.image ?? "") else { return }
         
         characterImageView.sd_setImage(with: url) { [weak self] (image, error, cacheType, url) in
             guard let image = image else { return }

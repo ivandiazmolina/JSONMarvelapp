@@ -11,7 +11,6 @@ import SDWebImage
 
 class SerieTableViewCell: UITableViewCell {
 
-    
     // MARK: IBOutlets
     @IBOutlet weak var serieNameLabel: UILabel!
     @IBOutlet weak var serieImageView: UIImageView!
@@ -40,5 +39,4 @@ class SerieTableViewCell: UITableViewCell {
             self?.serieImageView.backgroundColor = .clear
         }
     }
-    
 }
