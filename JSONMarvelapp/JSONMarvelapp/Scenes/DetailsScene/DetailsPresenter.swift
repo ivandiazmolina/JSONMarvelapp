@@ -13,9 +13,19 @@
 import UIKit
 
 protocol DetailsPresentationLogic {
+    func setupView(response: Details.SetupView.Response)
 }
 
 class DetailsPresenter: DetailsPresentationLogic {
 
   weak var viewController: DetailsDisplayLogic?
+    
+    func setupView(response: Details.SetupView.Response) {
+        
+        
+        let viewModel = Details.SetupView.ViewModel()
+        
+        viewController?.setupView(viewModel: viewModel)
+    }
+    
 }

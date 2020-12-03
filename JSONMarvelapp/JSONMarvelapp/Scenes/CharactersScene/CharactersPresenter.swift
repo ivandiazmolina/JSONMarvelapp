@@ -16,6 +16,8 @@ protocol CharactersPresentationLogic {
     func setupView(response: Characters.SetupView.Response)
     func presentCharacters()
     func presentDetails(response: Characters.DidSelectedItem.Response)
+    func presentEmptyView()
+    func displayLoading(_ show: Bool)
 }
 
 class CharactersPresenter: CharactersPresentationLogic {
@@ -43,5 +45,16 @@ class CharactersPresenter: CharactersPresentationLogic {
         
         // 2. display data
         viewController?.displayDetailsOfCharacter(viewModel: viewModel)
+    }
+    
+    func presentEmptyView() {
+        viewController?.displayEmptyState()
+    }
+    
+    func displayLoading(_ show: Bool) {
+        
+        if let vc = viewController as? BaseViewController {
+            vc.displayLoading(show)
+        }
     }
 }

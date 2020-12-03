@@ -16,6 +16,7 @@ protocol CharactersDisplayLogic: class {
     func setupView(viewModel: Characters.SetupView.ViewModel)
     func displayCharacters()
     func displayDetailsOfCharacter(viewModel: Characters.DidSelectedItem.ViewModel)
+    func displayEmptyState()
 }
 
 class CharactersViewController: BaseViewController, CharactersDisplayLogic {
@@ -24,6 +25,7 @@ class CharactersViewController: BaseViewController, CharactersDisplayLogic {
     var router: (NSObjectProtocol & CharactersRoutingLogic & CharactersDataPassing)?
     
     // MARK: IBOutlets
+    @IBOutlet weak var emptyView: EmptyView!
     @IBOutlet weak var charactersCollectionView: UICollectionView!
     
     // LETS AND VARS
@@ -100,6 +102,11 @@ class CharactersViewController: BaseViewController, CharactersDisplayLogic {
     
     func displayDetailsOfCharacter(viewModel: Characters.DidSelectedItem.ViewModel) {
         router?.routerToDetails(segue: nil)
+    }
+    
+    func displayEmptyState() {
+        emptyView.isHidden = false
+        charactersCollectionView.isHidden = true
     }
 }
 

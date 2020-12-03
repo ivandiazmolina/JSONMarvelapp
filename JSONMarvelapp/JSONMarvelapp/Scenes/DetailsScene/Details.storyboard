@@ -17,31 +17,10 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9eT-pE-Svp">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="n86-A7-n9D">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6xx-K0-iGR" userLabel="empty state">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="409"/>
-                                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xMu-CV-7Pf" userLabel="content">
-                                                <rect key="frame" x="0.0" y="409" width="414" height="409"/>
-                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </view>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstItem="n86-A7-n9D" firstAttribute="top" secondItem="9eT-pE-Svp" secondAttribute="top" id="280-Eg-SIN"/>
-                                    <constraint firstItem="n86-A7-n9D" firstAttribute="leading" secondItem="9eT-pE-Svp" secondAttribute="leading" id="7X3-pw-eDQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="n86-A7-n9D" secondAttribute="bottom" id="Iv6-n7-uxS"/>
-                                    <constraint firstAttribute="trailing" secondItem="n86-A7-n9D" secondAttribute="trailing" id="dq9-Fi-Y8s"/>
-                                </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9eT-pE-Svp" firstAttribute="top" secondItem="PjH-el-zMl" secondAttribute="top" id="1av-oD-cby"/>
                             <constraint firstItem="9eT-pE-Svp" firstAttribute="leading" secondItem="PjH-el-zMl" secondAttribute="leading" id="P9o-TH-bg6"/>

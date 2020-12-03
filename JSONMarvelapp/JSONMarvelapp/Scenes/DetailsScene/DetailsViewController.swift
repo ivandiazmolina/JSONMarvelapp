@@ -13,12 +13,15 @@
 import UIKit
 
 protocol DetailsDisplayLogic: class {
+    func setupView(viewModel: Details.SetupView.ViewModel)
 }
 
 class DetailsViewController: UIViewController, DetailsDisplayLogic {
     
     var interactor: DetailsBusinessLogic?
     var router: (NSObjectProtocol & DetailsRoutingLogic & DetailsDataPassing)?
+    
+    // MARK: IBOutlets
     
     // MARK: Object lifecycle
     
@@ -62,5 +65,10 @@ class DetailsViewController: UIViewController, DetailsDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        interactor?.setupView()
+    }
+    
+    func setupView(viewModel: Details.SetupView.ViewModel) {
     }
 }

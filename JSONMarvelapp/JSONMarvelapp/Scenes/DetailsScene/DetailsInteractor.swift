@@ -13,6 +13,7 @@
 import UIKit
 
 protocol DetailsBusinessLogic {
+    func setupView()
 }
 
 protocol DetailsDataStore {
@@ -25,4 +26,11 @@ class DetailsInteractor: DetailsBusinessLogic, DetailsDataStore {
     var worker: DetailsWorker?
     
     var character: Actor?
+    
+    func setupView() {
+        
+        let response = Details.SetupView.Response()
+        
+        presenter?.setupView(response: response)
+    }
 }

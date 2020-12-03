@@ -76,11 +76,24 @@ class CharactersInteractor: CharactersBusinessLogic, CharactersDataStore {
     // MARK: private methods
     fileprivate func loadCharacters(for serie: Serie) {
         
-        worker?.getCharacters(for: serie, completion: { [weak self] (characters, error) in
-                        
-            self?.characters = characters
-            
-            self?.presenter?.presentCharacters()
-        })
+        presenter?.displayLoading(true)
+        
+        
+        let deadlineTime = DispatchTime.now() + 1
+        DispatchQueue.main.asyncAfter(deadline: deadlineTime) { [weak self] in
+            self?.worker?.getCharacters(for: serie, completion: { [weak self] (characters, error) in
+                            
+                self?.characters = characters
+                
+                guard let count = characters?.count else {
+                    self?.presenter?.presentEmptyView()
+                    return
+                }
+                
+                count == 0 ? self?.presenter?.presentEmptyView() : self?.presenter?.presentCharacters()
+                
+                self?.presenter?.displayLoading(false)
+            })
+        }
     }
 }
