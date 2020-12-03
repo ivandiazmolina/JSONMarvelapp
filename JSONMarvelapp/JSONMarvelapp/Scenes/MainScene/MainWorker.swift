@@ -14,6 +14,8 @@ import UIKit
 
 class MainWorker {
     
+    /// init method that downloads initial data from API Repository
+    /// - Parameter completion: block
     func getInitialData(completion: @escaping([Serie]?, String?) -> Void) {
         
         // LETS and VARS

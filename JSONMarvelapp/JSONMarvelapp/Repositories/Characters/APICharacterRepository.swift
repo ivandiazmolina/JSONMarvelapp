@@ -9,6 +9,7 @@
 import Foundation
 
 class APICharacterRepository: APIBaseRepository, CharacterRepositoryProtocol {
+    
     func getCharacters(for serie: Serie, completion: @escaping ([Actor]) -> Void) {
         
         // 1. try to init the URL

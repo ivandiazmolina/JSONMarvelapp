@@ -25,6 +25,8 @@ class SeriesRouter: NSObject, SeriesRoutingLogic, SeriesDataPassing {
     weak var viewController: SeriesViewController?
     var dataStore: SeriesDataStore?
     
+    // MARK: SeriesRoutingLogic
+    
     func routerToCharacters(segue: UIStoryboardSegue?) {
         let storyboard = UIStoryboard(name: Constants.Storyboard.characters, bundle: nil)
         

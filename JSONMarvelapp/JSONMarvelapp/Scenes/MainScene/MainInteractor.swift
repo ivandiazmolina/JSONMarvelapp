@@ -25,6 +25,7 @@ class MainInteractor: MainBusinessLogic, MainDataStore {
     var presenter: MainPresentationLogic?
     var worker: MainWorker?
     
+    // MARK: MainBusinessLogic
     func setupView() {
         worker = MainWorker()
         presenter?.setupView()

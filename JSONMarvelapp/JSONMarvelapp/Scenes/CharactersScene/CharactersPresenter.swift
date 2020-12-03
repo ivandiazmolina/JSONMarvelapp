@@ -24,6 +24,8 @@ class CharactersPresenter: CharactersPresentationLogic {
 
     weak var viewController: CharactersDisplayLogic?
     
+    // MARK: CharactersPresentationLogic
+    
     func setupView(response: Characters.SetupView.Response) {
         
         // 1. create viewModel

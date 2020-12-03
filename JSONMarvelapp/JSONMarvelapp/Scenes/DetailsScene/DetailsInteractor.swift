@@ -14,6 +14,10 @@ import UIKit
 
 protocol DetailsBusinessLogic {
     func setupView()
+    func getSeriesCount() -> Int
+    func getComicsCount() -> Int
+    func getSectionsCount() -> Int
+    func getDataCellFor(index: Int, section: Int) -> Details.Models.DetailCellModel
 }
 
 protocol DetailsDataStore {
@@ -29,8 +33,43 @@ class DetailsInteractor: DetailsBusinessLogic, DetailsDataStore {
     
     func setupView() {
         
-        let response = Details.SetupView.Response()
+        worker = DetailsWorker()
+        
+        let response = Details.SetupView.Response(character: character)
         
         presenter?.setupView(response: response)
+    }
+    
+    // MARK: Series
+    
+    func getSeriesCount() -> Int {
+        return character?.series?.items?.count ?? 0
+    }
+    
+    func getComicsCount() -> Int {
+        return character?.comics?.items?.count ?? 0
+    }
+    
+    func getSectionsCount() -> Int {
+        return [
+            Details.Models.TypeCell.serie, Details.Models.TypeCell.comic
+        ].count
+    }
+    
+    func getDataCellFor(index: Int, section: Int) -> Details.Models.DetailCellModel {
+        
+        var model = Details.Models.DetailCellModel()
+        
+        switch section {
+        case 0: // series
+            model.serie = character?.series?.items?.getElement(index)
+            model.type = .serie
+        default: // comics
+            model.comic = character?.comics?.items?.getElement(index)
+            model.type = .comic
+        }
+        
+        return model
+        
     }
 }

@@ -18,6 +18,10 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         return String(describing: CharacterCollectionViewCell.self)
     }
     
+    // MARK: Methods
+    
+    /// method that updates UI
+    /// - Parameter model: model with data
     func updateUI(model: Characters.Models.CharacterCellModel) {
         
         guard let character = model.character else { return }
@@ -27,7 +31,7 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         characterNameLabel.textColor = .white
         characterNameLabel.font = .boldSystemFont(ofSize: 12)
         
-        guard let url = URL(string: character.image ?? "") else { return }
+        guard let url = URL(string: character.image) else { return }
         
         characterImageView.sd_setImage(with: url) { [weak self] (image, error, cacheType, url) in
             guard let image = image else { return }

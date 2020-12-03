@@ -21,6 +21,7 @@ class SeriesPresenter: SeriesPresentationLogic {
     
     weak var viewController: SeriesDisplayLogic?
     
+    // MARK: SeriesPresentationLogic
     func setupView(response: Series.SetupView.Response) {
         
         // 1. init loading

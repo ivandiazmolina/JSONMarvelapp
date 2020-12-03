@@ -20,12 +20,15 @@ class DetailsPresenter: DetailsPresentationLogic {
 
   weak var viewController: DetailsDisplayLogic?
     
+    // MARK: DetailsPresentationLogic
+    
     func setupView(response: Details.SetupView.Response) {
         
         
-        let viewModel = Details.SetupView.ViewModel()
+        var viewModel = Details.SetupView.ViewModel()
+        viewModel.characterName = response.character?.name
+        viewModel.url = URL(string: response.character?.image ?? "")
         
         viewController?.setupView(viewModel: viewModel)
     }
-    
 }

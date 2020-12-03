@@ -19,8 +19,24 @@ enum Details {
         struct Request {
         }
         struct Response {
+            var character: Actor?
         }
         struct ViewModel {
+            var characterName: String?
+            var url: URL?
+        }
+    }
+    
+    enum Models {
+        struct DetailCellModel {
+            var serie: ResourceURI?
+            var comic: ResourceURI?
+            var type: TypeCell?
+        }
+        
+        enum TypeCell {
+            case serie
+            case comic
         }
     }
 }

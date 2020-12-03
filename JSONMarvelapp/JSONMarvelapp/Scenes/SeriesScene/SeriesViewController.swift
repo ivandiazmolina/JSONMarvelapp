@@ -75,10 +75,11 @@ class SeriesViewController: BaseViewController, SeriesDisplayLogic {
         interactor?.setupView()
     }
     
+    // MARK: SeriesDisplayLogic
     func setupView(viewModel: Series.SetupView.ViewModel) {
         
         // NavigationController
-        self.navigationItem.title = viewModel.title;
+        self.navigationItem.title = viewModel.title
         
         // TableView
         seriesTableView.register(SerieTableViewCell.self)

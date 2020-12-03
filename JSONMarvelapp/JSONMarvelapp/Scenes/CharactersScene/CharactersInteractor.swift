@@ -34,6 +34,7 @@ class CharactersInteractor: CharactersBusinessLogic, CharactersDataStore {
     var characters: [Actor]?
     var selectedCharacter: Actor?
     
+    // MARK: CharactersBusinessLogic
     func setupView() {
 
         worker = CharactersWorker()
@@ -74,6 +75,7 @@ class CharactersInteractor: CharactersBusinessLogic, CharactersDataStore {
     }
     
     // MARK: private methods
+    
     fileprivate func loadCharacters(for serie: Serie) {
         
         presenter?.displayLoading(true)

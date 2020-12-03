@@ -43,6 +43,10 @@
 		2C5E5F212578F9F40067CC13 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C5E5F202578F9F40067CC13 /* Details.storyboard */; };
 		2C5E5F24257908610067CC13 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E5F23257908610067CC13 /* EmptyView.swift */; };
 		2C5E5F26257909040067CC13 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C5E5F25257909040067CC13 /* EmptyView.xib */; };
+		2C5E5F2A257933660067CC13 /* SimpleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E5F28257933660067CC13 /* SimpleTableViewCell.swift */; };
+		2C5E5F2B257933660067CC13 /* SimpleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C5E5F29257933660067CC13 /* SimpleTableViewCell.xib */; };
+		2C5E5F2D25793D120067CC13 /* ResourceURI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E5F2C25793D120067CC13 /* ResourceURI.swift */; };
+		2C5E5F2F25793E790067CC13 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E5F2E25793E790067CC13 /* Items.swift */; };
 		2C5EF1C82576A5AB00DC5870 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5EF1C72576A5AB00DC5870 /* Constants.swift */; };
 		2C5EF1CA2576E86100DC5870 /* APIBaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5EF1C92576E86100DC5870 /* APIBaseRepository.swift */; };
 		2C5EF1D02576EB7600DC5870 /* SerieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5EF1CF2576EB7600DC5870 /* SerieRepository.swift */; };
@@ -117,6 +121,10 @@
 		2C5E5F202578F9F40067CC13 /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
 		2C5E5F23257908610067CC13 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		2C5E5F25257909040067CC13 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
+		2C5E5F28257933660067CC13 /* SimpleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewCell.swift; sourceTree = "<group>"; };
+		2C5E5F29257933660067CC13 /* SimpleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleTableViewCell.xib; sourceTree = "<group>"; };
+		2C5E5F2C25793D120067CC13 /* ResourceURI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceURI.swift; sourceTree = "<group>"; };
+		2C5E5F2E25793E790067CC13 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		2C5EF1C72576A5AB00DC5870 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2C5EF1C92576E86100DC5870 /* APIBaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBaseRepository.swift; sourceTree = "<group>"; };
 		2C5EF1CF2576EB7600DC5870 /* SerieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieRepository.swift; sourceTree = "<group>"; };
@@ -250,6 +258,7 @@
 		2C5E5F122578F39F0067CC13 /* DetailsScene */ = {
 			isa = PBXGroup;
 			children = (
+				2C5E5F27257933430067CC13 /* View */,
 				2C5E5F142578F3DE0067CC13 /* DetailsPresenter.swift */,
 				2C5E5F152578F3DE0067CC13 /* DetailsWorker.swift */,
 				2C5E5F162578F3DE0067CC13 /* DetailsRouter.swift */,
@@ -261,13 +270,22 @@
 			path = DetailsScene;
 			sourceTree = "<group>";
 		};
-		2C5E5F22257906A50067CC13 /* Views */ = {
+		2C5E5F22257906A50067CC13 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
 				2C5E5F23257908610067CC13 /* EmptyView.swift */,
 				2C5E5F25257909040067CC13 /* EmptyView.xib */,
 			);
-			path = Views;
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		2C5E5F27257933430067CC13 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2C5E5F28257933660067CC13 /* SimpleTableViewCell.swift */,
+				2C5E5F29257933660067CC13 /* SimpleTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		2C5EF1C42576A14B00DC5870 /* Utils */ = {
@@ -296,6 +314,8 @@
 				2C5EF1DC2576F7F600DC5870 /* DataModel.swift */,
 				2C1208C82577C30900CB652F /* Thumbnail.swift */,
 				2C1208E12577E99900CB652F /* Actor.swift */,
+				2C5E5F2C25793D120067CC13 /* ResourceURI.swift */,
+				2C5E5F2E25793E790067CC13 /* Items.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -383,7 +403,7 @@
 		2CDC930A25768DBD0046943A /* JSONMarvelapp */ = {
 			isa = PBXGroup;
 			children = (
-				2C5E5F22257906A50067CC13 /* Views */,
+				2C5E5F22257906A50067CC13 /* CustomViews */,
 				2CA8061F257692D8000571E5 /* Scenes */,
 				2CA80620257692E5000571E5 /* Networking */,
 				2CA80622257692F9000571E5 /* Repositories */,
@@ -518,6 +538,7 @@
 				2CDC931825768DBE0046943A /* LaunchScreen.storyboard in Resources */,
 				2C1208C72577B98E00CB652F /* Localizable.strings in Resources */,
 				2C1208E02577E1A500CB652F /* Characters.storyboard in Resources */,
+				2C5E5F2B257933660067CC13 /* SimpleTableViewCell.xib in Resources */,
 				2C1208C5257785C400CB652F /* SerieTableViewCell.xib in Resources */,
 				2C5E5F26257909040067CC13 /* EmptyView.xib in Resources */,
 				2C1208E72577F67D00CB652F /* CharacterCollectionViewCell.xib in Resources */,
@@ -631,6 +652,7 @@
 				2C5EF1DB2576F56500DC5870 /* DataResponse.swift in Sources */,
 				2C5EF1C82576A5AB00DC5870 /* Constants.swift in Sources */,
 				2C1208DC2577CEDB00CB652F /* CharacterRepository.swift in Sources */,
+				2C5E5F2D25793D120067CC13 /* ResourceURI.swift in Sources */,
 				2C1208BA25777E9E00CB652F /* SeriesRouter.swift in Sources */,
 				2C5E5F1A2578F3DE0067CC13 /* DetailsPresenter.swift in Sources */,
 				2C5E5F1B2578F3DE0067CC13 /* DetailsWorker.swift in Sources */,
@@ -648,6 +670,7 @@
 				2C1208BB25777E9E00CB652F /* SeriesModels.swift in Sources */,
 				2C5EF1D42576EBE300DC5870 /* APISerieRepository.swift in Sources */,
 				2C1208D92577CBB200CB652F /* CharactersInteractor.swift in Sources */,
+				2C5E5F2A257933660067CC13 /* SimpleTableViewCell.swift in Sources */,
 				2C1208D52577CBB200CB652F /* CharactersWorker.swift in Sources */,
 				2C1208D72577CBB200CB652F /* CharactersModels.swift in Sources */,
 				2CDC930C25768DBD0046943A /* AppDelegate.swift in Sources */,
@@ -657,6 +680,7 @@
 				2C1208E22577E99900CB652F /* Actor.swift in Sources */,
 				2C1208B925777E9E00CB652F /* SeriesWorker.swift in Sources */,
 				2CA8062E25769963000571E5 /* MainWorker.swift in Sources */,
+				2C5E5F2F25793E790067CC13 /* Items.swift in Sources */,
 				2C1208DE2577CF3F00CB652F /* APICharacterRepository.swift in Sources */,
 				2C5E5F1C2578F3DE0067CC13 /* DetailsRouter.swift in Sources */,
 				2CDC930E25768DBD0046943A /* SceneDelegate.swift in Sources */,

@@ -3,26 +3,9 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
-        <scene sceneID="3Nj-XV-nPc">
-            <objects>
-                <viewController id="Sln-xu-da4" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vcl-1d-IEf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="MDW-mB-oGd"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="wx1-DJ-Fxg"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YsI-pP-eb0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="352" y="-417"/>
-        </scene>
         <!--Main View Controller-->
         <scene sceneID="ZgX-ta-Oqu">
             <objects>

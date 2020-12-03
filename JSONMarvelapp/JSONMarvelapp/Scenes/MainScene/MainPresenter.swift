@@ -21,6 +21,8 @@ class MainPresenter: MainPresentationLogic {
     
     weak var viewController: MainDisplayLogic?
     
+    // MARK: MainPresentationLogic
+    
     func setupView() {
         viewController?.setupView()
     }

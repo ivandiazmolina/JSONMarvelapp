@@ -35,6 +35,7 @@ class SeriesInteractor: SeriesBusinessLogic, SeriesDataStore {
     var series: [Serie]?
     var selectedSerie: Serie?
     
+    // MARK: SeriesBusinessLogic
     func setupView() {
         
         let response = Series.SetupView.Response(title: "series.title".localized)

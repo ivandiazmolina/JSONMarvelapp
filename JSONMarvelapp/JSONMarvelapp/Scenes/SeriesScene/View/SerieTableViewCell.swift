@@ -22,6 +22,10 @@ class SerieTableViewCell: UITableViewCell {
         return String(describing: SerieTableViewCell.self)
     }
     
+    // MARK: Methods
+    
+    /// method that updates UI
+    /// - Parameter model: model with data
     func updateUI(model: Series.Models.SerieCellModel) {
         
         serie = model.serie

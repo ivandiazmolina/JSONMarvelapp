@@ -14,6 +14,10 @@ struct Actor: Codable {
     var name: String?
     var description: String?
     var thumbnail: Thumbail?
+    var comics: Items?
+    var series: Items?
+    
+    
     var image: String {
         return "\(thumbnail?.path ?? "").\(thumbnail?.extension ?? "")"
     }
@@ -23,6 +27,8 @@ struct Actor: Codable {
         name = ""
         description = ""
         thumbnail = Thumbail()
+        comics = Items()
+        series = Items()
     }
     
     init(_ data: Data) throws {

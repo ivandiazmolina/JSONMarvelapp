@@ -78,10 +78,12 @@ class CharactersViewController: BaseViewController, CharactersDisplayLogic {
         interactor?.setupView()
     }
 
+    // MARK: CharactersDisplayLogic
+    
     func setupView(viewModel: Characters.SetupView.ViewModel) {
         
         // NavigationController
-        self.navigationItem.title = viewModel.title;
+        self.navigationItem.title = viewModel.title
         
         //CollectionView
         charactersCollectionView.register(CharacterCollectionViewCell.self)
@@ -120,12 +122,12 @@ extension CharactersViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterCollectionViewCell.cellIdentifier, for: indexPath) as? CharacterCollectionViewCell else {
-            print("Error to cast UICollectionViewCell to PhotoCollectionViewCell")
+            print("Error to cast UICollectionViewCell to CharacterCollectionViewCell")
             return UICollectionViewCell()
         }
         
         guard let data = interactor?.getCharacterCellFor(index: indexPath.row) else {
-            print("Error to get PhotoCollectionViewCell from index")
+            print("Error to get CharacterCollectionViewCell from index")
             return UICollectionViewCell()
         }
 

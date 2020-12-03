@@ -21,6 +21,7 @@ enum APIRequestResult<T> {
 enum APIEndpoint {
     case series
     case characters(serieID: Int)
+    case details(characterID: Int)
     
     
     var url: String {
@@ -29,6 +30,8 @@ enum APIEndpoint {
             return "/series"
         case .characters(let serieID):
             return "/series/\(serieID)/characters"
+        case .details(let characterID):
+            return "/characters/\(characterID)"
         }
     }
 }

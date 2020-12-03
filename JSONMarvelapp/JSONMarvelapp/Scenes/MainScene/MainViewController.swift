@@ -73,6 +73,8 @@ class MainViewController: UITabBarController, MainDisplayLogic {
         interactor?.setupView()
     }
     
+    // MARK: MainDisplayLogic
+    
     func setupView() {
         print(#function)
     }

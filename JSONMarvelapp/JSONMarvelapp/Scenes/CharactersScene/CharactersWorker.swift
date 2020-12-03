@@ -14,6 +14,8 @@ import UIKit
 
 class CharactersWorker {
     
+    /// method that downloads characters data for a specific serie from API Repository
+    /// - Parameter completion: block
     func getCharacters(for serie: Serie, completion: @escaping([Actor]?, String?) -> Void) {
         
         // LETS and VARS

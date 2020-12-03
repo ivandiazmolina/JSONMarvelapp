@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 protocol DetailsDisplayLogic: class {
     func setupView(viewModel: Details.SetupView.ViewModel)
@@ -22,6 +23,9 @@ class DetailsViewController: UIViewController, DetailsDisplayLogic {
     var router: (NSObjectProtocol & DetailsRoutingLogic & DetailsDataPassing)?
     
     // MARK: IBOutlets
+    @IBOutlet weak var characterNameLabel: UILabel!
+    @IBOutlet weak var characterImageView: UIImageView!
+    @IBOutlet weak var detailsTableView: UITableView!
     
     // MARK: Object lifecycle
     
@@ -69,6 +73,65 @@ class DetailsViewController: UIViewController, DetailsDisplayLogic {
         interactor?.setupView()
     }
     
+    // MARK: DetailsDisplayLogic
+    
     func setupView(viewModel: Details.SetupView.ViewModel) {
+        
+        // NavigationController
+        self.navigationItem.title = viewModel.characterName
+        
+        // Character Image
+        characterImageView.sd_setImage(with: viewModel.url) { [weak self] (image, error, cacheType, url) in
+            guard let image = image else { return }
+            
+            self?.characterImageView.image = image
+            self?.characterImageView.backgroundColor = .clear
+        }
+        
+        // Character Label
+        characterNameLabel.text = viewModel.characterName
+        
+        // TableView
+        detailsTableView.register(SimpleTableViewCell.self)
+        detailsTableView.delegate = self
+        detailsTableView.dataSource = self
+    }
+}
+
+// MARK: UITableviewDelegate and UITableViewDataSource
+
+extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return interactor?.getSectionsCount() ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return section == 0 ?
+        interactor?.getSeriesCount() ?? 0 :
+        interactor?.getComicsCount() ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return section == 0 ? "details.section.series".localized : "details.section.comics".localized
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SimpleTableViewCell.cellIdentifier) as? SimpleTableViewCell else {
+            print("Error to cast TableViewCell to SimpleTableViewCell")
+            return UITableViewCell()
+        }
+        
+        guard let data = interactor?.getDataCellFor(index: indexPath.row, section: indexPath.section) else {
+            print("Error to get SimpleTableViewCell from index")
+            return UITableViewCell()
+        }
+        
+        cell.updateUI(model: data)
+        
+        return cell
     }
 }

@@ -25,6 +25,8 @@ class CharactersRouter: NSObject, CharactersRoutingLogic, CharactersDataPassing 
     weak var viewController: CharactersViewController?
     var dataStore: CharactersDataStore?
     
+    // MARK: CharactersRoutingLogic
+    
     func routerToDetails(segue: UIStoryboardSegue?) {
         let storyboard = UIStoryboard(name: Constants.Storyboard.details, bundle: nil)
         
