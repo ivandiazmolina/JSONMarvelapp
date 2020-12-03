@@ -23,10 +23,15 @@ class SeriesPresenter: SeriesPresentationLogic {
     
     func setupView(response: Series.SetupView.Response) {
         
-        // 1. create viewModel
+        // 1. init loading
+        if let vc = viewController as? BaseViewController {
+            vc.displayLoading(true)
+        }
+        
+        // 2. create viewModel
         let viewModel = Series.SetupView.ViewModel(title: response.title)
         
-        // 2. display data
+        // 3. display data
         viewController?.setupView(viewModel: viewModel)
     }
     

@@ -128,6 +128,10 @@ extension SeriesViewController: UITableViewDelegate, UITableViewDataSource {
 extension SeriesViewController: MainDelegate {
    
     func fetchedSeries(series: [Serie]) {
+        // 1. dismiss loading
+        displayLoading(false)
+        
+        // 2. reload data
         reloadData(tableView: seriesTableView)
     }
 }
