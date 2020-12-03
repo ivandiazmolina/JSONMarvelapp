@@ -40,7 +40,7 @@ class SeriesRouter: NSObject, SeriesRoutingLogic, SeriesDataPassing {
     
     // MARK: Navigation
     
-    func navigateToComments(source: SeriesViewController, destination: CharactersViewController) {
+    fileprivate func navigateToComments(source: SeriesViewController, destination: CharactersViewController) {
         ui {
             source.navigationController?.pushViewController(destination, animated: true)
         }
@@ -48,7 +48,7 @@ class SeriesRouter: NSObject, SeriesRoutingLogic, SeriesDataPassing {
     
     // MARK: Passing data
     
-    func passDataToCharacters(source: SeriesDataStore?, destination: inout CharactersDataStore?) {
+    fileprivate func passDataToCharacters(source: SeriesDataStore?, destination: inout CharactersDataStore?) {
         destination?.serie = source?.selectedSerie
     }
 }

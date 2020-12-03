@@ -59,8 +59,6 @@ class MainViewControllerTests: XCTestCase {
         func getInitialData() {
             getInitialDataCalled = true
         }
-        
-    
   }
   
   // MARK: Tests

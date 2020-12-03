@@ -13,6 +13,7 @@
 import UIKit
 
 @objc protocol CharactersRoutingLogic {
+    func routerToDetails(segue: UIStoryboardSegue?)
 }
 
 protocol CharactersDataPassing {
@@ -23,4 +24,31 @@ class CharactersRouter: NSObject, CharactersRoutingLogic, CharactersDataPassing 
     
     weak var viewController: CharactersViewController?
     var dataStore: CharactersDataStore?
+    
+    func routerToDetails(segue: UIStoryboardSegue?) {
+        let storyboard = UIStoryboard(name: Constants.Storyboard.details, bundle: nil)
+        
+        if let segue = segue, let destinationVC = segue.destination as? DetailsViewController {
+            var destinationDS = destinationVC.router?.dataStore
+            passDataToDetails(source: dataStore, destination: &destinationDS)
+        } else if let destinationVC = storyboard.instantiateInitialViewController() as? DetailsViewController {
+            var destinationDS = destinationVC.router?.dataStore
+            passDataToDetails(source: dataStore, destination: &destinationDS)
+            navigateToDetails(source: viewController!, destination: destinationVC)
+        }
+    }
+    
+    // MARK: Navigation
+    
+    fileprivate func navigateToDetails(source: CharactersViewController, destination: DetailsViewController) {
+        ui {
+            source.navigationController?.pushViewController(destination, animated: true)
+        }
+    }
+    
+    // MARK: Passing data
+    
+    fileprivate func passDataToDetails(source: CharactersDataStore?, destination: inout DetailsDataStore?) {
+        destination?.character = source?.selectedCharacter
+    }
 }

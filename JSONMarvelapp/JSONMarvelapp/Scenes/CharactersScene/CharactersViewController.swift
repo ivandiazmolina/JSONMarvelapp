@@ -15,6 +15,7 @@ import UIKit
 protocol CharactersDisplayLogic: class {
     func setupView(viewModel: Characters.SetupView.ViewModel)
     func displayCharacters()
+    func displayDetailsOfCharacter(viewModel: Characters.DidSelectedItem.ViewModel)
 }
 
 class CharactersViewController: BaseViewController, CharactersDisplayLogic {
@@ -96,6 +97,10 @@ class CharactersViewController: BaseViewController, CharactersDisplayLogic {
     func displayCharacters() {
         reloadData(collectionView: charactersCollectionView)
     }
+    
+    func displayDetailsOfCharacter(viewModel: Characters.DidSelectedItem.ViewModel) {
+        router?.routerToDetails(segue: nil)
+    }
 }
 
 // MARK: UICollectionViewDelegate, UICollectionViewDatasource
@@ -120,5 +125,9 @@ extension CharactersViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.updateUI(model: data)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        interactor?.didSelectedItemAt(index: indexPath.row)
     }
 }

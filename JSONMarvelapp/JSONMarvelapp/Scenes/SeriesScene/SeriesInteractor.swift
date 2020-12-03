@@ -36,7 +36,10 @@ class SeriesInteractor: SeriesBusinessLogic, SeriesDataStore {
     var selectedSerie: Serie?
     
     func setupView() {
-        presenter?.setupView()
+        
+        let response = Series.SetupView.Response(title: "series.title".localized)
+        
+        presenter?.setupView(response: response)
     }
     
     func didSelectedItemAt(index: Int) {

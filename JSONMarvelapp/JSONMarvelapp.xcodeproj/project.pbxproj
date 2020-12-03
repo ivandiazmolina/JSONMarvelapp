@@ -34,6 +34,13 @@
 		2C5E5F0F2578CE690067CC13 /* MainInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E5F0B2578CE690067CC13 /* MainInteractorTests.swift */; };
 		2C5E5F102578CE690067CC13 /* MainWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E5F0C2578CE690067CC13 /* MainWorkerTests.swift */; };
 		2C5E5F112578CE690067CC13 /* MainPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E5F0D2578CE690067CC13 /* MainPresenterTests.swift */; };
+		2C5E5F1A2578F3DE0067CC13 /* DetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E5F142578F3DE0067CC13 /* DetailsPresenter.swift */; };
+		2C5E5F1B2578F3DE0067CC13 /* DetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E5F152578F3DE0067CC13 /* DetailsWorker.swift */; };
+		2C5E5F1C2578F3DE0067CC13 /* DetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E5F162578F3DE0067CC13 /* DetailsRouter.swift */; };
+		2C5E5F1D2578F3DE0067CC13 /* DetailsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E5F172578F3DE0067CC13 /* DetailsModels.swift */; };
+		2C5E5F1E2578F3DE0067CC13 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E5F182578F3DE0067CC13 /* DetailsViewController.swift */; };
+		2C5E5F1F2578F3DE0067CC13 /* DetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E5F192578F3DE0067CC13 /* DetailsInteractor.swift */; };
+		2C5E5F212578F9F40067CC13 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C5E5F202578F9F40067CC13 /* Details.storyboard */; };
 		2C5EF1C82576A5AB00DC5870 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5EF1C72576A5AB00DC5870 /* Constants.swift */; };
 		2C5EF1CA2576E86100DC5870 /* APIBaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5EF1C92576E86100DC5870 /* APIBaseRepository.swift */; };
 		2C5EF1D02576EB7600DC5870 /* SerieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5EF1CF2576EB7600DC5870 /* SerieRepository.swift */; };
@@ -99,6 +106,13 @@
 		2C5E5F0B2578CE690067CC13 /* MainInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorTests.swift; sourceTree = "<group>"; };
 		2C5E5F0C2578CE690067CC13 /* MainWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWorkerTests.swift; sourceTree = "<group>"; };
 		2C5E5F0D2578CE690067CC13 /* MainPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTests.swift; sourceTree = "<group>"; };
+		2C5E5F142578F3DE0067CC13 /* DetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenter.swift; sourceTree = "<group>"; };
+		2C5E5F152578F3DE0067CC13 /* DetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsWorker.swift; sourceTree = "<group>"; };
+		2C5E5F162578F3DE0067CC13 /* DetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRouter.swift; sourceTree = "<group>"; };
+		2C5E5F172578F3DE0067CC13 /* DetailsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsModels.swift; sourceTree = "<group>"; };
+		2C5E5F182578F3DE0067CC13 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		2C5E5F192578F3DE0067CC13 /* DetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInteractor.swift; sourceTree = "<group>"; };
+		2C5E5F202578F9F40067CC13 /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
 		2C5EF1C72576A5AB00DC5870 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2C5EF1C92576E86100DC5870 /* APIBaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBaseRepository.swift; sourceTree = "<group>"; };
 		2C5EF1CF2576EB7600DC5870 /* SerieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieRepository.swift; sourceTree = "<group>"; };
@@ -229,6 +243,20 @@
 			path = MainScene;
 			sourceTree = "<group>";
 		};
+		2C5E5F122578F39F0067CC13 /* DetailsScene */ = {
+			isa = PBXGroup;
+			children = (
+				2C5E5F142578F3DE0067CC13 /* DetailsPresenter.swift */,
+				2C5E5F152578F3DE0067CC13 /* DetailsWorker.swift */,
+				2C5E5F162578F3DE0067CC13 /* DetailsRouter.swift */,
+				2C5E5F172578F3DE0067CC13 /* DetailsModels.swift */,
+				2C5E5F182578F3DE0067CC13 /* DetailsViewController.swift */,
+				2C5E5F192578F3DE0067CC13 /* DetailsInteractor.swift */,
+				2C5E5F202578F9F40067CC13 /* Details.storyboard */,
+			);
+			path = DetailsScene;
+			sourceTree = "<group>";
+		};
 		2C5EF1C42576A14B00DC5870 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +294,7 @@
 				2CA8062625769762000571E5 /* MainScene */,
 				2C1208B125777E8400CB652F /* SeriesScene */,
 				2C1208CD2577CB6C00CB652F /* CharactersScene */,
+				2C5E5F122578F39F0067CC13 /* DetailsScene */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -479,6 +508,7 @@
 				2C1208E72577F67D00CB652F /* CharacterCollectionViewCell.xib in Resources */,
 				2CDC931525768DBE0046943A /* Assets.xcassets in Resources */,
 				2CA8063425769997000571E5 /* Main.storyboard in Resources */,
+				2C5E5F212578F9F40067CC13 /* Details.storyboard in Resources */,
 				2C1208BF25777F2200CB652F /* Series.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -579,12 +609,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C5EF1D22576EBBC00DC5870 /* LocalSerieRepository.swift in Sources */,
+				2C5E5F1F2578F3DE0067CC13 /* DetailsInteractor.swift in Sources */,
+				2C5E5F1E2578F3DE0067CC13 /* DetailsViewController.swift in Sources */,
 				2C5EF1D02576EB7600DC5870 /* SerieRepository.swift in Sources */,
 				2CA8062D25769963000571E5 /* MainPresenter.swift in Sources */,
 				2C5EF1DB2576F56500DC5870 /* DataResponse.swift in Sources */,
 				2C5EF1C82576A5AB00DC5870 /* Constants.swift in Sources */,
 				2C1208DC2577CEDB00CB652F /* CharacterRepository.swift in Sources */,
 				2C1208BA25777E9E00CB652F /* SeriesRouter.swift in Sources */,
+				2C5E5F1A2578F3DE0067CC13 /* DetailsPresenter.swift in Sources */,
+				2C5E5F1B2578F3DE0067CC13 /* DetailsWorker.swift in Sources */,
 				2C1208C92577C30900CB652F /* Thumbnail.swift in Sources */,
 				2C5EF1D62576EC7C00DC5870 /* SeriesManager.swift in Sources */,
 				2CA8062F25769963000571E5 /* MainRouter.swift in Sources */,
@@ -592,6 +626,7 @@
 				2CA8063225769963000571E5 /* MainInteractor.swift in Sources */,
 				2C1208E62577F67D00CB652F /* CharacterCollectionViewCell.swift in Sources */,
 				2CA806252576936B000571E5 /* BaseViewController.swift in Sources */,
+				2C5E5F1D2578F3DE0067CC13 /* DetailsModels.swift in Sources */,
 				2CA8063025769963000571E5 /* MainModels.swift in Sources */,
 				2C1208D62577CBB200CB652F /* CharactersRouter.swift in Sources */,
 				2C1208BB25777E9E00CB652F /* SeriesModels.swift in Sources */,
@@ -607,6 +642,7 @@
 				2C1208B925777E9E00CB652F /* SeriesWorker.swift in Sources */,
 				2CA8062E25769963000571E5 /* MainWorker.swift in Sources */,
 				2C1208DE2577CF3F00CB652F /* APICharacterRepository.swift in Sources */,
+				2C5E5F1C2578F3DE0067CC13 /* DetailsRouter.swift in Sources */,
 				2CDC930E25768DBD0046943A /* SceneDelegate.swift in Sources */,
 				2C5EF1CA2576E86100DC5870 /* APIBaseRepository.swift in Sources */,
 				2C1208C4257785C400CB652F /* SerieTableViewCell.swift in Sources */,

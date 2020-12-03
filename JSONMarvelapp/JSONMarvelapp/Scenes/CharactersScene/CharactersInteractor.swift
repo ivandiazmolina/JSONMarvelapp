@@ -14,6 +14,7 @@ import UIKit
 
 protocol CharactersBusinessLogic {
     func setupView()
+    func didSelectedItemAt(index: Int)
     func getCharactersCount() -> Int
     func getCharacterCellFor(index: Int) -> Characters.Models.CharacterCellModel
 }
@@ -21,6 +22,7 @@ protocol CharactersBusinessLogic {
 protocol CharactersDataStore {
     var serie: Serie? { get set }
     var characters: [Actor]? { get set }
+    var selectedCharacter: Actor? { get set }
 }
 
 class CharactersInteractor: CharactersBusinessLogic, CharactersDataStore {
@@ -30,6 +32,7 @@ class CharactersInteractor: CharactersBusinessLogic, CharactersDataStore {
     
     var serie: Serie?
     var characters: [Actor]?
+    var selectedCharacter: Actor?
     
     func setupView() {
 
@@ -43,18 +46,22 @@ class CharactersInteractor: CharactersBusinessLogic, CharactersDataStore {
         // 2. load character of serie selected
         loadCharacters(for: serie)
         
-        // 3. fire setupView
-        presenter?.setupView()
+        // 3. create response
+        let response = Characters.SetupView.Response(title: "characters.title".localized)
+                
+        // 4. fire setupView
+        presenter?.setupView(response: response)
     }
     
-    func loadCharacters(for serie: Serie) {
+    func didSelectedItemAt(index: Int) {
         
-        worker?.getCharacters(for: serie, completion: { [weak self] (characters, error) in
-                        
-            self?.characters = characters
-            
-            self?.presenter?.presentCharacters()
-        })
+        guard let character = characters?.getElement(index) else { return }
+        
+        selectedCharacter = character
+        
+        let response = Characters.DidSelectedItem.Response(actor: selectedCharacter)
+        
+        presenter?.presentDetails(response: response)
     }
     
     func getCharactersCount() -> Int {
@@ -64,5 +71,16 @@ class CharactersInteractor: CharactersBusinessLogic, CharactersDataStore {
     func getCharacterCellFor(index: Int) -> Characters.Models.CharacterCellModel {
         guard let actor = characters?.getElement(index) else { return Characters.Models.CharacterCellModel() }
         return Characters.Models.CharacterCellModel(character: actor)
+    }
+    
+    // MARK: private methods
+    fileprivate func loadCharacters(for serie: Serie) {
+        
+        worker?.getCharacters(for: serie, completion: { [weak self] (characters, error) in
+                        
+            self?.characters = characters
+            
+            self?.presenter?.presentCharacters()
+        })
     }
 }

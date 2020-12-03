@@ -12,11 +12,13 @@ struct Constants {
         static let main: String = "Main"
         static let series: String = "Series"
         static let characters: String = "Characters"
+        static let details: String = "Details"
     }
     
     struct Scene {
         static let main: String = "MainViewController"
         static let series: String = "SeriesViewController"
         static let characters: String = "CharactersViewController"
+        static let details: String = "DetailsViewController"
     }
 }

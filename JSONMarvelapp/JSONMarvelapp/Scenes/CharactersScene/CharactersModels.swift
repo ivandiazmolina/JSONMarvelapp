@@ -17,8 +17,20 @@ enum Characters {
     // MARK: Use cases
     
     enum SetupView {
+        struct Response {
+            var title: String?
+        }
         struct ViewModel {
             var title: String?
+        }
+    }
+    
+    enum DidSelectedItem {
+        struct Response {
+            var actor: Actor?
+        }
+        struct ViewModel {
+            var actor: Actor?
         }
     }
     

@@ -13,7 +13,7 @@
 import UIKit
 
 protocol SeriesPresentationLogic {
-    func setupView()
+    func setupView(response: Series.SetupView.Response)
     func presentCharacters()
 }
 
@@ -21,10 +21,10 @@ class SeriesPresenter: SeriesPresentationLogic {
     
     weak var viewController: SeriesDisplayLogic?
     
-    func setupView() {
+    func setupView(response: Series.SetupView.Response) {
         
         // 1. create viewModel
-        let viewModel = Series.SetupView.ViewModel(title: "series.title".localized)
+        let viewModel = Series.SetupView.ViewModel(title: response.title)
         
         // 2. display data
         viewController?.setupView(viewModel: viewModel)

@@ -13,18 +13,19 @@
 import UIKit
 
 protocol CharactersPresentationLogic {
-    func setupView()
+    func setupView(response: Characters.SetupView.Response)
     func presentCharacters()
+    func presentDetails(response: Characters.DidSelectedItem.Response)
 }
 
 class CharactersPresenter: CharactersPresentationLogic {
-    
+
     weak var viewController: CharactersDisplayLogic?
     
-    func setupView() {
+    func setupView(response: Characters.SetupView.Response) {
         
         // 1. create viewModel
-        let viewModel = Characters.SetupView.ViewModel(title: "characters.title".localized)
+        let viewModel = Characters.SetupView.ViewModel(title: response.title)
         
         // 2. display data
         viewController?.setupView(viewModel: viewModel)
@@ -32,5 +33,15 @@ class CharactersPresenter: CharactersPresentationLogic {
     
     func presentCharacters() {
         viewController?.displayCharacters()
+    }
+    
+    func presentDetails(response: Characters.DidSelectedItem.Response) {
+        
+        
+        // 1. create viewModel
+        let viewModel = Characters.DidSelectedItem.ViewModel(actor: response.actor)
+        
+        // 2. display data
+        viewController?.displayDetailsOfCharacter(viewModel: viewModel)
     }
 }
