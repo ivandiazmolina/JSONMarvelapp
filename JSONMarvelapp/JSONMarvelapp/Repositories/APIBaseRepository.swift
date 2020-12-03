@@ -12,8 +12,8 @@ import Foundation
 //
 // - success: Operation finish without error
 // - failure: Operation finish with error
-enum APIRequestResult<U> {
-    case success(result: U)
+enum APIRequestResult<T> {
+    case success(result: T)
     case failure(error: String)
 }
 
