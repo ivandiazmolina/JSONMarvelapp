@@ -37,7 +37,7 @@ class MainViewControllerTests: XCTestCase {
   func setupMainViewController() {
     let bundle = Bundle.main
     let storyboard = UIStoryboard(name: "Main", bundle: bundle)
-    sut = storyboard.instantiateInitialViewController() as! MainViewController
+    sut = storyboard.instantiateInitialViewController() as? MainViewController
   }
   
   func loadView() {
