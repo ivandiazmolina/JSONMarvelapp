@@ -39,9 +39,7 @@ class DetailsInteractor: DetailsBusinessLogic, DetailsDataStore {
         
         presenter?.setupView(response: response)
     }
-    
-    // MARK: Series
-    
+        
     func getSeriesCount() -> Int {
         return character?.series?.items?.count ?? 0
     }

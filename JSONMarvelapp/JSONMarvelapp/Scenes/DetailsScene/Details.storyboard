@@ -50,7 +50,7 @@
                                                     </view>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="7VG-At-Op5">
                                                         <rect key="frame" x="0.0" y="295" width="414" height="523"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </tableView>
                                                 </subviews>
                                             </stackView>
@@ -64,7 +64,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="6rB-wI-NSn" firstAttribute="top" secondItem="9eT-pE-Svp" secondAttribute="top" id="Guo-Wk-XNK"/>
                                     <constraint firstItem="6rB-wI-NSn" firstAttribute="leading" secondItem="9eT-pE-Svp" secondAttribute="leading" id="H4P-hl-9sV"/>

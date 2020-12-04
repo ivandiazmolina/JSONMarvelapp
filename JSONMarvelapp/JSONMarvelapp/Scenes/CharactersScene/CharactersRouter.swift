@@ -44,7 +44,7 @@ class CharactersRouter: NSObject, CharactersRoutingLogic, CharactersDataPassing 
     
     fileprivate func navigateToDetails(source: CharactersViewController, destination: DetailsViewController) {
         ui {
-            source.navigationController?.pushViewController(destination, animated: true)
+            source.present(destination, animated: true)
         }
     }
     

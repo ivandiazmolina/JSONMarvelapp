@@ -42,7 +42,7 @@ class MainWorkerTests: XCTestCase {
         
         MainWorkerTests.testSeries = []
         
-        for i in 0...10 {
+        for i in 0...9 {
             var serie = Serie()
             serie.id = i
             serie.title = "title \(i)"

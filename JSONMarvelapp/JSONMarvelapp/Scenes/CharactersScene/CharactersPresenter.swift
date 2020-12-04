@@ -41,7 +41,6 @@ class CharactersPresenter: CharactersPresentationLogic {
     
     func presentDetails(response: Characters.DidSelectedItem.Response) {
         
-        
         // 1. create viewModel
         let viewModel = Characters.DidSelectedItem.ViewModel(actor: response.actor)
         

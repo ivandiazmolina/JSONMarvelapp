@@ -14,39 +14,39 @@
 import XCTest
 
 class MainViewControllerTests: XCTestCase {
-  // MARK: Subject under test
-  
-  var sut: MainViewController!
-  var window: UIWindow!
-  
-  // MARK: Test lifecycle
-  
-  override func setUp() {
-    super.setUp()
-    window = UIWindow()
-    setupMainViewController()
-  }
-  
-  override func tearDown() {
-    window = nil
-    super.tearDown()
-  }
-  
-  // MARK: Test setup
-  
-  func setupMainViewController() {
-    let bundle = Bundle.main
-    let storyboard = UIStoryboard(name: "Main", bundle: bundle)
-    sut = storyboard.instantiateInitialViewController() as? MainViewController
-  }
-  
-  func loadView() {
-    window.addSubview(sut.view)
-    RunLoop.current.run(until: Date())
-  }
-  
-  // MARK: Test doubles
-  
+    // MARK: Subject under test
+    
+    var sut: MainViewController!
+    var window: UIWindow!
+    
+    // MARK: Test lifecycle
+    
+    override func setUp() {
+        super.setUp()
+        window = UIWindow()
+        setupMainViewController()
+    }
+    
+    override func tearDown() {
+        window = nil
+        super.tearDown()
+    }
+    
+    // MARK: Test setup
+    
+    func setupMainViewController() {
+        let bundle = Bundle.main
+        let storyboard = UIStoryboard(name: "Main", bundle: bundle)
+        sut = storyboard.instantiateInitialViewController() as? MainViewController
+    }
+    
+    func loadView() {
+        window.addSubview(sut.view)
+        RunLoop.current.run(until: Date())
+    }
+    
+    // MARK: Test doubles
+    
     class MainBusinessLogicSpy: MainBusinessLogic {
         
         var setupViewCalled = false
@@ -59,20 +59,20 @@ class MainViewControllerTests: XCTestCase {
         func getInitialData() {
             getInitialDataCalled = true
         }
-  }
-  
-  // MARK: Tests
-  
-  func testSetupView() {
-    // Given
-    let spy = MainBusinessLogicSpy()
-    sut.interactor = spy
+    }
     
-    // When
-    loadView()
-    sut.setupView()
+    // MARK: Tests
     
-    // Then
-    XCTAssertTrue(spy.setupViewCalled, "viewDidLoad() should ask the interactor to setupView")
-  }
+    func testSetupView() {
+        // Given
+        let spy = MainBusinessLogicSpy()
+        sut.interactor = spy
+        
+        // When
+        loadView()
+        sut.setupView()
+        
+        // Then
+        XCTAssertTrue(spy.setupViewCalled, "viewDidLoad() should ask the interactor to setupView")
+    }
 }
